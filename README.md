@@ -25,3 +25,87 @@ The system integrates:
 
 ## 📂 Pipeline Architecture
 
+
+---
+
+## 🧬 Dataset  
+The project uses **BraTS (Brain Tumor Segmentation Challenge)** MRI slices in `.h5` format.
+
+- 4 MRI modalities per slice:  
+  **FLAIR, T1, T1CE, T2**  
+- This project focuses on **FLAIR** as the most tumor-sensitive modality.
+- Additional versions (100, 101, …) correspond to **different subjects**, not different classes.
+
+---
+
+## 🛠️ Features  
+✔ GAN training for MRI denoising  
+✔ LPIPS perceptual loss integration  
+✔ Clean / Noisy / Enhanced MRI comparison  
+✔ Classification before & after enhancement  
+✔ Automatic saving of enhanced slices  
+✔ Reproducible training / evaluation pipeline  
+
+---
+
+## 🏗️ Model Components  
+
+### 🔹 Generator — Improved UNet  
+- Multi-scale encoder–decoder  
+- Residual bottleneck block  
+- Skip connections  
+- Sigmoid output for image reconstruction  
+
+### 🔹 Discriminator — PatchGAN  
+- Classifies local patches instead of the full image  
+- Stabilizes GAN training  
+
+### 🔹 Loss Functions  
+- **Adversarial (MSE)**
+- **L1 Loss (pixel reconstruction)**
+- **LPIPS Loss (perceptual similarity)**
+
+---
+
+## 📊 Results  
+The pipeline generates **three visual outputs** for each MRI slice:
+
+- **Clean MRI**
+- **Noisy MRI**
+- **Generated MRI (GAN Output)**
+
+Example:
+
+![Comparison](comparison_clean_noisy_gan.png)
+
+The GAN clearly reduces noise and preserves anatomical structure.
+
+---
+
+## 🧪 Classification Results  
+The project trains **ResNet18** twice:
+
+1. **Before Enhancement**  
+2. **After Enhancement**
+
+Metrics included:
+
+- Accuracy  
+- Precision, Recall, F1-score  
+- Confusion Matrix  
+- ROC Curve & AUC  
+
+This demonstrates the impact of GAN-based enhancement on downstream medical AI tasks.
+
+---
+
+## 📁 Project Structure  
+└── Brain-MRI-GAN-Enhancement/
+├── data/
+├── generator/
+├── classifier/
+├── enhanced_outputs/
+├── comparison_clean_noisy_gan.png
+├── BEST_GENERATOR.pth
+├── README.md
+└── main.ipynb
