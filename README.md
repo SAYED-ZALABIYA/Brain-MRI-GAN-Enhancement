@@ -109,3 +109,35 @@ This demonstrates the impact of GAN-based enhancement on downstream medical AI t
 ├── BEST_GENERATOR.pth
 ├── README.md
 └── main.ipynb
+
+---
+
+## 🧑‍💻 Technologies Used  
+- Python  
+- PyTorch  
+- NumPy  
+- LPIPS  
+- Matplotlib  
+- scikit-learn  
+- BraTS MRI Dataset  
+
+---
+
+## 📌 Future Work  
+- Add full multi-class (LGG vs HGG) dataset  
+- Train on 3D volumetric MRI instead of 2D slices  
+- Try diffusion models for higher-quality reconstruction  
+- Compare UNet-GAN vs CycleGAN vs Diffusion  
+
+---
+
+## 🤝 Contributions  
+Pull Requests are welcome — especially for dataset expansion, model improvements, or medical evaluation ideas.
+
+---
+
+## 📜 License  
+MIT License – Free for academic and research use.
+
+---
+
