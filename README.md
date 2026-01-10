@@ -136,8 +136,5 @@ Pull Requests are welcome — especially for dataset expansion, model improvemen
 
 ---
 
-## 📜 License  
-MIT License – Free for academic and research use.
 
----
 
